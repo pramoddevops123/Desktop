@@ -1,20 +1,17 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'GREETING', defaultValue: 'Hello', description: 'Greeting Message')
+    }
+
     stages {
-        stage('Build') {
+        stage('Print') {
             steps {
-                echo 'Building...'
+                echo "${params.GREETING}, Jenkins!"
             }
         }
     }
-
-    post {
-        success {
-            echo 'Build succeeded!'
-        }
-        failure {
-            echo 'Build failed!'
-        }
-    }
 }
+
+
