@@ -2,9 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Greet') {
+        stage('Build') {
             steps {
-                echo 'Hello, Jenkins Declarative Pipeline!'
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }
